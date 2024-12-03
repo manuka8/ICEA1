@@ -6,17 +6,9 @@ import Cart from './Cart';
 import { flowers } from './FlowerDB';
 
 export default function Products(){
-    const [quantity, setQuantity] = useState(0);
-    const handleAddToCart = () => {
-        if (quantity > 0) {
-            addToCart(flower, quantity);
-            setQuantity(0); 
-        }
-    };
-    const handleQuantityChange = (e) => {
-        const value = Math.max(0, Number(e.target.value)); 
-        setQuantity(value);
-    };
+    
+    const [cartItems, setCartItems] = useState([]);
+
     const addToCart = (flower, quantity) => {
         setCartItems(prevCartItems => {
             const existingItem = prevCartItems.find(item => item.id === flower.id);
