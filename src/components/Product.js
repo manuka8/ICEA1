@@ -15,16 +15,23 @@ export default function Product(){
     };
     return(
         <div className="grid-item">
-
-            <div class="card">
-                <img  />
-                <div class="card-body">
-                    <h5 class="card-title">Price:</h5>
-                    <div class="quantity-container">
-                        <label for="quantity">Quantity:</label>
-                        <input type="number" id="quantity" name="quantity" />
+            <div className="card">
+            <img src={require(`../assets/image/${flower.img}`)} />
+                <div className="card-body">
+                    <h5 className="card-title">Price: {flower.price}</h5>
+                    <div className="quantity-container">
+                        <label htmlFor="quantity">Quantity:</label>
+                        <input
+                            type="number"
+                            id="quantity"
+                            name="quantity"
+                            value={quantity}
+                            onChange={handleQuantityChange}
+                        />
                     </div>
-                    <button class="card-button">Add to Cart</button>
+                    <button className="card-button" onClick={handleAddToCart}>
+                        Add to Cart
+                    </button>
                 </div>
             </div>
         </div>
