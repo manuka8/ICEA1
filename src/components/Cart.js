@@ -11,9 +11,13 @@ export default function Cart() {
                     <td>Price</td>
 
                 </thead>
-                {
-                    
-                }
+                {cartItems.map(item => (
+                            <tr key={item.id}>
+                                <td>{item.name}</td>
+                                <td>{item.qty}</td>
+                                <td>${(item.price * item.qty).toFixed(2)}</td>
+                            </tr>
+                        ))}
                 <tr>
                     <td >Grand Total : </td>
                     <td colSpan={2}>Grand Total</td>
